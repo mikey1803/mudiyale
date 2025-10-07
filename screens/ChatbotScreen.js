@@ -2697,28 +2697,28 @@ What feels most important for you to talk about right now? I'm here to listen an
         {...props}
         wrapperStyle={{
           right: {
-            backgroundColor: '#FF6B9D', // Beautiful pink gradient
-            borderRadius: 18,
-            marginVertical: 4,
-            paddingHorizontal: 4,
-            shadowColor: '#FF6B9D',
-            shadowOffset: { width: 0, height: 2 },
-            shadowOpacity: 0.25,
-            shadowRadius: 3.84,
-            elevation: 3,
+            backgroundColor: '#667eea', // Beautiful purple for user messages
+            borderRadius: 20,
+            marginVertical: 5,
+            paddingHorizontal: 6,
+            shadowColor: '#667eea',
+            shadowOffset: { width: 0, height: 3 },
+            shadowOpacity: 0.3,
+            shadowRadius: 5,
+            elevation: 5,
           },
           left: {
             backgroundColor: '#FFFFFF',
-            borderRadius: 18,
-            marginVertical: 4,
-            paddingHorizontal: 4,
-            borderWidth: 1.5,
-            borderColor: '#E8E8E8',
-            shadowColor: '#000',
-            shadowOffset: { width: 0, height: 1 },
-            shadowOpacity: 0.1,
-            shadowRadius: 2,
-            elevation: 2,
+            borderRadius: 20,
+            marginVertical: 5,
+            paddingHorizontal: 6,
+            borderWidth: 2,
+            borderColor: '#E0E7FF',
+            shadowColor: '#667eea',
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.15,
+            shadowRadius: 4,
+            elevation: 3,
           },
         }}
         textStyle={{
@@ -2726,7 +2726,7 @@ What feels most important for you to talk about right now? I'm here to listen an
             color: '#FFFFFF',
             fontSize: 15,
             lineHeight: 22,
-            fontWeight: '400',
+            fontWeight: '500',
           },
           left: {
             color: '#1A1A1A',
@@ -2756,7 +2756,7 @@ What feels most important for you to talk about right now? I'm here to listen an
             style={styles.dismissButton} 
             onPress={() => setShowMusicButton(false)}
           >
-            <Ionicons name="close" size={16} color="#666" />
+            <Ionicons name="close" size={18} color="#FFFFFF" />
           </TouchableOpacity>
         </View>
       )}
@@ -2768,14 +2768,14 @@ What feels most important for you to talk about right now? I'm here to listen an
           _id: 1,
         }}
         renderBubble={renderBubble}
-        placeholder="Share what's on your mind... 🌸"
+        placeholder="Share what's on your mind... 💭"
         alwaysShowSend={true}
         showUserAvatar={false}
         scrollToBottom={true}
         minInputToolbarHeight={60}
         textInputProps={{
           style: {
-            color: '#000000',
+            color: '#1A1A1A',
             fontSize: 16,
             lineHeight: 22,
             paddingTop: 0,
@@ -2796,7 +2796,7 @@ What feels most important for you to talk about right now? I'm here to listen an
               value={props.text}
               onChangeText={props.onTextChanged}
               placeholder={props.placeholder}
-              placeholderTextColor="#999"
+              placeholderTextColor="#9CA3AF"
               multiline={true}
               maxLength={500}
             />
@@ -2842,27 +2842,27 @@ What feels most important for you to talk about right now? I'm here to listen an
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F8F9FA', // Soft, calming background
+    backgroundColor: '#F0F4FF', // Beautiful soft blue-purple background
   },
   musicButtonContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#FF6B9D',
+    backgroundColor: '#667eea', // Changed to beautiful purple
     marginHorizontal: 16,
     marginTop: 8,
     marginBottom: 4,
-    borderRadius: 16,
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    shadowColor: '#FF6B9D',
+    borderRadius: 20,
+    paddingVertical: 14,
+    paddingHorizontal: 18,
+    shadowColor: '#667eea',
     shadowOffset: {
       width: 0,
-      height: 3,
+      height: 4,
     },
-    shadowOpacity: 0.3,
-    shadowRadius: 4.65,
-    elevation: 6,
+    shadowOpacity: 0.35,
+    shadowRadius: 6,
+    elevation: 8,
   },
   musicButton: {
     flex: 1,
@@ -2871,14 +2871,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   musicButtonText: {
-    color: 'white',
+    color: '#FFFFFF',
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: 'bold',
     marginLeft: 8,
   },
   dismissButton: {
-    padding: 4,
+    padding: 6,
     marginLeft: 8,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    borderRadius: 12,
   },
   composerContainer: {
     flex: 1,
@@ -2886,23 +2888,23 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginTop: 8,
     marginBottom: 8,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
     backgroundColor: '#FFFFFF',
-    borderRadius: 24,
-    borderWidth: 1.5,
-    borderColor: '#E0E0E0',
-    minHeight: 48,
+    borderRadius: 25,
+    borderWidth: 2,
+    borderColor: '#667eea',
+    minHeight: 50,
     justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.08,
-    shadowRadius: 2,
-    elevation: 1,
+    shadowColor: '#667eea',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.15,
+    shadowRadius: 5,
+    elevation: 4,
   },
   textInput: {
     flex: 1,
-    color: '#000000',
+    color: '#1A1A1A',
     backgroundColor: '#FFFFFF',
     fontSize: 16,
     lineHeight: 22,
@@ -2910,6 +2912,7 @@ const styles = StyleSheet.create({
     paddingBottom: 4,
     paddingHorizontal: 8,
     minHeight: 40,
+    fontWeight: '500',
   },
   sendContainer: {
     justifyContent: 'center',
@@ -2918,21 +2921,21 @@ const styles = StyleSheet.create({
     marginLeft: 5,
   },
   sendButton: {
-    backgroundColor: '#FF6B9D', // Beautiful pink color matching theme
-    paddingHorizontal: 24,
-    paddingVertical: 13,
-    borderRadius: 24,
-    minWidth: 70,
+    backgroundColor: '#667eea', // Beautiful purple matching the theme
+    paddingHorizontal: 26,
+    paddingVertical: 14,
+    borderRadius: 25,
+    minWidth: 75,
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#FF6B9D',
+    shadowColor: '#667eea',
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 4,
     },
-    shadowOpacity: 0.3,
-    shadowRadius: 3.84,
-    elevation: 4,
+    shadowOpacity: 0.4,
+    shadowRadius: 6,
+    elevation: 6,
   },
   sendButtonDisabled: {
     backgroundColor: '#D3D3D3',
@@ -2942,7 +2945,7 @@ const styles = StyleSheet.create({
   sendButtonText: {
     color: '#FFFFFF',
     fontSize: 16,
-    fontWeight: '700',
+    fontWeight: 'bold',
     letterSpacing: 0.5,
   },
   sendButtonTextDisabled: {
