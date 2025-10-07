@@ -1,4 +1,4 @@
-// utils/EmergencyResources.js - Location-based crisis support finder
+// utils/EmergencyResources.js - Location-based crisis support finder for India
 
 // Note: Location services removed for Expo Go compatibility
 // Using fallback location detection based on user input
@@ -14,16 +14,16 @@ export class EmergencyResourceFinder {
     try {
       console.log('📍 Using fallback location detection...');
       
-      // For now, return a default location (can be enhanced later with web geolocation)
+      // For now, return a default location (Tamil Nadu, India)
       // This ensures the crisis system works even without precise location
       this.userLocation = {
-        latitude: 39.8283, // Center of US for fallback
-        longitude: -98.5795,
+        latitude: 13.0827, // Chennai, Tamil Nadu
+        longitude: 80.2707,
         timestamp: new Date(),
         isApproximate: true
       };
 
-      console.log('📍 Fallback location set');
+      console.log('📍 Fallback location set (Tamil Nadu, India)');
       return this.userLocation;
       
     } catch (error) {
@@ -32,94 +32,139 @@ export class EmergencyResourceFinder {
     }
   }
 
-  // Database of crisis centers (you can expand this or connect to an API)
+  // Database of crisis centers - Indian Mental Health Resources
   getCrisisCentersDatabase() {
     return [
-      // National US Crisis Centers
+      // National Indian Crisis Centers
       {
-        id: 'national_988',
-        name: '988 Suicide & Crisis Lifeline',
+        id: 'national_kiran',
+        name: 'KIRAN Mental Health Helpline',
         type: 'hotline',
-        phone: '988',
-        description: '24/7 free crisis support for anyone in emotional distress',
+        phone: '1800-599-0019',
+        description: '24/7 toll-free mental health support by Ministry of Health, Government of India',
         availability: '24/7',
         services: ['suicide prevention', 'crisis counseling', 'emotional support'],
         coverage: 'national',
         priority: 1
       },
       {
-        id: 'crisis_text',
-        name: 'Crisis Text Line',
-        type: 'text',
-        phone: '741741',
-        textCode: 'HOME',
-        description: 'Free 24/7 crisis support via text message',
+        id: 'vandrevala',
+        name: 'Vandrevala Foundation Helpline',
+        type: 'hotline',
+        phone: '1860-266-2345',
+        description: '24/7 free crisis support and mental health counseling',
         availability: '24/7',
-        services: ['crisis counseling', 'text support'],
+        services: ['crisis counseling', 'suicide prevention', 'emotional support'],
         coverage: 'national',
         priority: 1
       },
       {
-        id: 'nami_helpline',
-        name: 'NAMI National Helpline',
+        id: 'aasra',
+        name: 'AASRA Suicide Prevention Helpline',
         type: 'hotline',
-        phone: '1-800-950-6264',
-        description: 'Mental health information, referrals, and support',
-        availability: 'Mon-Fri 10am-8pm ET',
-        services: ['information', 'referrals', 'support'],
+        phone: '91-22-27546669',
+        description: '24/7 crisis helpline for suicide prevention',
+        availability: '24/7',
+        services: ['suicide prevention', 'crisis support'],
         coverage: 'national',
-        priority: 2
+        priority: 1
+      },
+      {
+        id: 'sneha_india',
+        name: 'SNEHA India',
+        type: 'hotline',
+        phone: '044-24640050',
+        description: 'Emotional support helpline based in Chennai',
+        availability: '24/7',
+        services: ['emotional support', 'crisis counseling'],
+        coverage: 'national',
+        priority: 1
       },
 
-      // Regional/State Centers (examples - you'd expand this)
+      // Tamil Nadu Specific Resources
       {
-        id: 'ca_crisis',
-        name: 'California Crisis Support',
-        type: 'center',
-        phone: '1-855-845-7415',
-        address: 'Multiple locations across California',
-        latitude: 34.0522,
-        longitude: -118.2437,
-        description: 'Crisis intervention and mental health services',
+        id: 'tn_health_helpline',
+        name: 'Tamil Nadu Health Helpline',
+        type: 'hotline',
+        phone: '104',
+        description: 'Government health helpline including mental health support',
         availability: '24/7',
-        services: ['crisis intervention', 'mental health services', 'counseling'],
-        coverage: 'california',
+        services: ['health information', 'mental health support', 'referrals'],
+        coverage: 'tamil_nadu',
+        latitude: 13.0827,
+        longitude: 80.2707,
+        priority: 1
+      },
+      {
+        id: 'chennai_sneha',
+        name: 'SNEHA Chennai',
+        type: 'center',
+        phone: '044-24640050',
+        address: '11, Park View Road, R A Puram, Chennai - 600028',
+        latitude: 13.0338,
+        longitude: 80.2518,
+        description: 'Suicide prevention center in Chennai',
+        availability: '24/7',
+        services: ['crisis intervention', 'suicide prevention', 'face-to-face counseling'],
+        coverage: 'chennai',
         priority: 2
       },
       {
-        id: 'ny_lifeline',
-        name: 'NYC Well',
+        id: 'scarf_chennai',
+        name: 'SCARF (Schizophrenia Research Foundation)',
         type: 'center',
-        phone: '1-888-692-9355',
-        address: 'Multiple locations in NYC',
-        latitude: 40.7128,
-        longitude: -74.0060,
-        description: 'Free mental health support for NYC residents',
-        availability: '24/7',
-        services: ['counseling', 'crisis support', 'referrals'],
-        coverage: 'new_york_city',
+        phone: '044-26251500',
+        address: 'R/7A, North Main Road, Anna Nagar West Extension, Chennai - 600101',
+        latitude: 13.0878,
+        longitude: 80.2085,
+        description: 'Mental health center in Chennai',
+        availability: 'Mon-Sat 9am-5pm',
+        services: ['mental health services', 'counseling', 'psychiatric care'],
+        coverage: 'chennai',
         priority: 2
       },
       {
-        id: 'tx_crisis',
-        name: 'Texas Crisis Text Line',
-        type: 'text',
-        phone: '741741',
-        textCode: 'TX',
-        description: 'Texas-specific crisis support via text',
-        latitude: 31.9686,
-        longitude: -99.9018,
+        id: 'fortis_chennai',
+        name: 'Fortis Malar Hospital - Mental Health',
+        type: 'hospital',
+        phone: '044-42892222',
+        address: '52, 1st Main Road, Gandhi Nagar, Adyar, Chennai - 600020',
+        latitude: 13.0067,
+        longitude: 80.2548,
+        description: 'Mental health emergency services',
         availability: '24/7',
-        services: ['crisis counseling', 'text support'],
-        coverage: 'texas',
+        services: ['emergency mental health', 'psychiatric care', 'crisis intervention'],
+        coverage: 'chennai',
+        priority: 2
+      },
+      {
+        id: 'mitram',
+        name: 'Mitram Foundation',
+        type: 'hotline',
+        phone: '080-25722573',
+        description: 'Mental health support and suicide prevention',
+        availability: '10am-8pm',
+        services: ['counseling', 'suicide prevention'],
+        coverage: 'south_india',
+        priority: 2
+      },
+      {
+        id: 'parivarthan',
+        name: 'Parivarthan Counseling Center',
+        type: 'hotline',
+        phone: '7676602602',
+        description: 'Professional counseling services',
+        availability: '9am-9pm',
+        services: ['counseling', 'mental health support'],
+        coverage: 'karnataka_tn',
         priority: 2
       }
     ];
   }
 
-  // Calculate distance between two coordinates (in miles)
+  // Calculate distance between two coordinates (in kilometers)
   calculateDistance(lat1, lon1, lat2, lon2) {
-    const R = 3959; // Earth's radius in miles
+    const R = 6371; // Earth's radius in kilometers
     const dLat = this.toRadians(lat2 - lat1);
     const dLon = this.toRadians(lon2 - lon1);
     
@@ -152,7 +197,7 @@ export class EmergencyResourceFinder {
         // National resources are always available and most important
         if (center.coverage === 'national') {
           resource.distance = 0;
-          resource.availability_note = 'Available nationwide - Call or text anytime';
+          resource.availability_note = 'Available across India - Call anytime';
           availableResources.push(resource);
         }
         // Include regional resources as additional options
@@ -207,34 +252,47 @@ export class EmergencyResourceFinder {
     return {
       immediate: [
         {
-          name: '988 Suicide & Crisis Lifeline',
-          phone: '988',
-          description: '24/7 crisis support - Call or text',
+          name: 'KIRAN Mental Health Helpline',
+          phone: '1800-599-0019',
+          description: '24/7 toll-free mental health support - Government of India',
           availability: '24/7',
           type: 'hotline'
         },
         {
-          name: 'Crisis Text Line',
-          phone: '741741',
-          textCode: 'HOME',
-          description: 'Text HOME to 741741 for free crisis support',
+          name: 'Vandrevala Foundation',
+          phone: '1860-266-2345',
+          description: '24/7 free crisis support and counseling',
           availability: '24/7',
-          type: 'text'
+          type: 'hotline'
+        },
+        {
+          name: 'SNEHA India (Chennai)',
+          phone: '044-24640050',
+          description: '24/7 emotional support helpline',
+          availability: '24/7',
+          type: 'hotline'
         }
       ],
       professional: [
         {
           name: 'Emergency Services',
-          phone: '911',
-          description: 'For immediate medical emergencies',
+          phone: '112',
+          description: 'For immediate medical emergencies (National Emergency Number)',
           availability: '24/7',
           type: 'emergency'
         },
         {
-          name: 'NAMI National Helpline',
-          phone: '1-800-950-6264',
-          description: 'Mental health information and referrals',
-          availability: 'Mon-Fri 10am-8pm ET',
+          name: 'Tamil Nadu Health Helpline',
+          phone: '104',
+          description: 'Health information and mental health support',
+          availability: '24/7',
+          type: 'helpline'
+        },
+        {
+          name: 'AASRA Suicide Prevention',
+          phone: '91-22-27546669',
+          description: '24/7 crisis helpline for suicide prevention',
+          availability: '24/7',
           type: 'helpline'
         }
       ],
@@ -281,14 +339,14 @@ export class EmergencyResourceFinder {
         response += `• **${resource.name}**: ${resource.phone}\n`;
         response += `  ${resource.description}\n`;
         if (resource.distance && resource.distance > 0) {
-          response += `  Distance: ${resource.distance} miles\n`;
+          response += `  Distance: ${resource.distance} km\n`;
         }
         response += `\n`;
       });
     }
 
     if (crisisLevel === 'immediate') {
-      response += `\n🆘 **If you're in immediate danger, call 911**\n`;
+      response += `\n🆘 **If you're in immediate danger, call 112 (National Emergency)**\n`;
       response += `💙 **Your life has value. Help is available right now.**`;
     }
 
